@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jqwery parallax</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+  	<!-- navigation-menu -->
+  	<div class="nav">
+  		<ul class="nav-menu">
+  			<li class="nav-item">
+  				<a href="#main"  class="nav-link">Главная</a>
+  			</li>
+  			<li class="nav-item">
+  				<a href="#main"  class="nav-link">Блог</a>
+  			</li>
+  			<li class="nav-item">
+  				<a href="#store"  class="nav-link">Магазин</a>
+  			</li>
+  			<li class="nav-item">
+  				<a href="#about"  class="nav-link">О Нас</a>
+  			</li>
+  			<li class="nav-item">
+  				<a href="#contact"  class="nav-link">Контакты</a>
+  			</li>
+  		</ul>
+  	</div>
+  	<!-- main sait-section -->
+   <div id="main" class="sait-section"></div>
+   <div id="blog" class="sait-section"></div>
+   <div id="store" class="sait-section"></div>
+   <div id="about" class="sait-section"></div>
+   <div id="contact" class="sait-section"></div>
+   
+
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script type="text/javascript">
+  		$(document).ready(function () {
+        // body...
+        $("a.nav-link").click(function(){
+           $('html,body').animate({
+           	scrollTop:$($(this).attr("href")).offset().top +"px"
+           },{
+           	duration:1000,
+           	easing:"swing"
+           });
+           return false;
+        });
+  		});
+  	</script>
+</html>
